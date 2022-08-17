@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<a href="{% url 'add-habit'  %}"> <button class = "btn btn-primary">Add Habit</button> </a>
+<a href="{% url 'habits'  %}"> <button class = "btn btn-primary">View All Habits</button> </a>
+<a href="{% url 'daily'  %}"> <button class = "btn btn-primary">Daily</button> </a>
+<a href="{% url 'weekly'  %}"> <button class = "btn btn-primary">Weekly</button> </a>
+<a href="{% url 'streaks'  %}"> <button class = "btn btn-primary">Streaks</button> </a>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Habit Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Stop Date</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for habit in habits %}
+    <tr>
+      <td>{{habit.name}}</td>
+      <td> {{habit.duration }}</td>
+      <td> {{habit.completed}}</td>
+      <td> {{habit.start_date }}</td>
+      <td> {{habit.finish_date }}</td>
+      <td class = "d-flex flex-row justify-content-around"> 
+        <form method="post" action = "delete/{{habit.id}}">
+        {% csrf_token %} 
+        <input type="submit" value="Delete" class = "btn btn-danger"> 
+       </form>   
+        <a href = "{% url 'update' habit.id %}"  ><button class = "btn btn-primary"> Edit</button></a>
+        <a href = "{% url 'tasks' habit.id %}"  ><button class = "btn btn-primary">  Tasks </button></a>
+        <a href = "{% url 'streak' habit.id %}"  ><button class = "btn btn-primary"> Streak </button></a>
+      </td>
+    </tr>
+
+    {% endfor %}
+   
+  </tbody>
+</table>
+
+{% endblock %}

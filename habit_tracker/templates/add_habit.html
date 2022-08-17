@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'habits'  %}"> <button class = "btn btn-primary">View All Habits</button> </a>
+<div class="container">
+    <h1> Add Your Habit </h1>
+    <form action = "" method = "POST" style = "width: 500px;">
+    {% csrf_token %}
+    {{form}}
+    <input type = "submit" class = "btn btn-primary">
+    </form>
+</div>    
+
+{% endblock %}
