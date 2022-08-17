@@ -3,7 +3,7 @@ First, create a new folder and open it using a prefered text editor such as Visu
 
 Then open the git bash and clone the project using the following line of code; git clone https://github.com/filmon-yoha/Habit-App.git
 
-Next open up the terminal again and open the virtual environment using the following line of code; python -m venv .\venv
+Next open up the terminal and open the virtual environment using the following line of code; python -m venv .\venv
 
 To activate the virtual environment use the following code; venv\scripts\activate
 
