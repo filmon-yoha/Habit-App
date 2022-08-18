@@ -9,8 +9,12 @@ To activate the virtual environment use the following code; venv\scripts\activat
 
 To install the packages required, first call upon the correct file using cd Habit-App and then type the following code; pip install -r requirements.txt
 
-Then run the server using the code; py manage.py runserver
+Then execute the written SQL code using the following code; py manage.py makemigrations
 
-Press the link that appears after the execution of the code which will directly lead to the app
+Next execute the default SQL code using the code; py manage.py migrate
 
-To run the unittests use the code; py manage.py test
+Then run the server using; py manage.py runserver
+
+After the execution of the code,click on the link that appears which will directly lead to the app
+
+to run the tests use the code; py manage.py test
