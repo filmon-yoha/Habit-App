@@ -17,4 +17,4 @@ Then run the server using; py manage.py runserver
 
 After the execution of the code,click on the link that appears which will directly lead to the app
 
-to run the tests use the code; py manage.py test
+To run the tests use the code; py manage.py test
